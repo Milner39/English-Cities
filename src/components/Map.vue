@@ -1,5 +1,5 @@
 <template>
-  <div class="map container">
+  <div class="map__container">
     <div id="mapId" class="map"></div>
   </div>
 </template>
@@ -10,6 +10,7 @@
   export default {
     name: "Map",
     props: {
+      cityName: String,
       coords: Array
     },
     setup(props) {
@@ -21,14 +22,22 @@
         {
           maxZoom: 20,
           attribution: '© OpenStreetMap'
-        }).addTo(myMap);
+        }).addTo(myMap)
+        const circle = leaflet.circle(props["coords"], {
+          color: "red",
+          fillColor: "#f03",
+          fillOpacity: "0.5",
+          radius: 1000
+        }).addTo(myMap)
+        circle.bindPopup(props["cityName"])
+
       })
     }
   }
 </script>
 
 <style>
-  .map.container {
+  .map__container {
     background-color: hsl(210, 50%, 2%);
     width: 75%;
     height: auto;
@@ -37,7 +46,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+  }
 
   .map {
     position: fixed;
