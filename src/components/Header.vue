@@ -11,11 +11,12 @@
 <style >
   .header {
     width: 100%;
+    background-color: hsl(210, 50%, 20%);
     /* 
     aspect-ratio: 5/1;
     min-height: 120px;
     max-height: 240px;
-    background-color: hsl(210, 50%, 20%); */
+    */
 
     display: flex;
     justify-content: center;

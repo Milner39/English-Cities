@@ -1,6 +1,6 @@
 <template>
   <div class="slideshow__container">
-    <div v-for="(slide, index) in slides" :key="slide.text+index" class="slide fade">
+    <div v-for="(slide, index) in slides" :key="slide.text+index" class="slide fade-in">
       <img :src="slide.imagePath" :alt="slide.text">  
     </div>
   </div>
@@ -22,19 +22,19 @@
 
   onMounted(() => {
     let slideIndex = 0;
-  showSlides();
+    showSlides();
   
-  function showSlides() {
-    let i;
-    let slidesE = document.getElementsByClassName("slide");
-    for (i = 0; i < slidesE.length; i++) {
-      slidesE[i].style.display = "none";
+    function showSlides() {
+      let i;
+      let slidesE = document.getElementsByClassName("slide");
+      for (i = 0; i < slidesE.length; i++) {
+        slidesE[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slidesE.length) {slideIndex = 1}
+      slidesE[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
-    slideIndex++;
-    if (slideIndex > slidesE.length) {slideIndex = 1}
-    slidesE[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
-  }
   })
 
   
@@ -47,20 +47,33 @@
     width: 100%;
     height: 100%;
     position: relative;
+    overflow-x: hidden;
   }
 
   .slide {
     width: 100%;
     display: none;
   }
-  .fade {
-    animation-name: fade;
+  .fade-in {
+    animation-name: fade-in;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade-in {
+    /* from {opacity: .5}
+    to {opacity: 1} */
+    from {transform: translateX(100%)}
+    to {transform: translateX(0)}
+  }
+
+  .fade-out {
+    animation-name: fade-out;
     animation-duration: 1.5s;
   }
 
-  @keyframes fade {
-    from {opacity: .1}
-    to {opacity: 1}
+  @keyframes fade-out {
+    from {transform: translateX(0%)}
+    to {transform: translateX(-100%)}
   }
 
   .slide > img {
