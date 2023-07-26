@@ -2,11 +2,11 @@
     <div class="city">
       <div class="side">
         <div class="page">
-          <AccordionGroup/>
+          <slot name="side"></slot>
         </div>
       </div>
       <div class="main">
-        <TabBar/>
+        <slot name="main"></slot>
       </div>
     </div>
 </template>
@@ -24,7 +24,7 @@
   }
 </script>
   
-<style>
+<style scoped>
   .city {
     width: 100%;
     height: 100vh;

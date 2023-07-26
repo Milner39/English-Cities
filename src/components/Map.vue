@@ -7,50 +7,64 @@
 <script>
   import { onMounted } from "vue"
   import leaflet from "leaflet"
+  
   export default {
+
     name: "Map",
     props: {
-      cityName: String,
-      coords: Array
+      cityName: String
     },
     setup(props) {
+
+      //console.log("Here", props.cityName)
+
       let myMap
-      onMounted(() => {
-        myMap = leaflet.map("mapId").setView(props["coords"], 13)
-  
+      onMounted(async() => {
+
+        const apiKey = "+Tg5CAeiWOIuy3D9NtnUAw==TH4GlzkxP5N3ceHj"
+        const request = {
+          method: "GET",
+          headers: { "X-Api-Key": apiKey },
+        }
+        var cityName = props.cityName;
+        const response = await fetch("https://api.api-ninjas.com/v1/city?name=" + cityName, request)
+        const data =  await response.json()
+        const coords = [data[0].latitude, data[0].longitude]
+
+
+        myMap = leaflet.map("mapId").setView(coords, 13)
         leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
         {
           maxZoom: 20,
           attribution: '© OpenStreetMap'
         }).addTo(myMap)
-        const circle = leaflet.circle(props["coords"], {
+        const circle = leaflet.circle(coords, {
           color: "red",
           fillColor: "#f03",
           fillOpacity: "0.5",
           radius: 1000
         }).addTo(myMap)
-        circle.bindPopup(props["cityName"])
+        circle.bindPopup(props.cityName)
 
       })
     }
   }
+
 </script>
 
-<style>
+<style scoped>
   .map__container {
-    background-color: hsl(210, 50%, 2%);
-    width: 75%;
+    width: 100%;
     height: auto;
     aspect-ratio: 2/1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
   }
 
   .map {
-    position: fixed;
-    width: 100%;
+
+    width: 75%;
     height: 100%;
   }
 </style>

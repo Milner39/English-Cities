@@ -1,18 +1,15 @@
 <template>
   <div class="nav">
     <div class="nav-link__container">
-      <NavLink></NavLink>
-      <NavLink></NavLink>
-      <NavLink></NavLink>
-      <NavLink></NavLink>
+      <slot name="nav-links"></slot>
     </div>
     <div class="call-to-action__container">
-      <NavLink></NavLink>
+      <slot name="call-to-action"></slot>
     </div>
   </div>
 </template>
   
-<script>
+<script scoped>
   
   import NavLink from './NavLink.vue';
 

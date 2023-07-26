@@ -25,36 +25,22 @@
 </template>
 
 <script setup>
+
   import { reactive } from "vue"
   import { Collapse } from "vue-collapsed"
 
-  const fakeData = [
-    {
-      title: "Big Ben",
-      text: "Wow, so cool",
-      imagePath: "../images/bigBen.jpg"
-    },
-    {
-      title: "London Eye",
-      text: "Cool but doesn't look like an eye",
-      imagePath: "../images/londonEye.jpg"
-    },
-    {
-      title: "Tower Bridge",
-      text: "Very cool",
-      imagePath: "../images/towerBridge.jpg"
-    }
-  ]
+  const props = defineProps(["accordionData"])
+  const accordionData = props.accordionData
 
   const accordions = reactive(
-    fakeData.map(({ title, text, imagePath }, index) => ({
+    accordionData.map(({ title, text, imagePath }, index) => ({
       title,
       text,
       imagePath,
       isExpanded: index === 0
     }))
   )
-
+ 
   function handleAccordion(selectedIndex) {
     accordions.forEach((_, index) => {
       accordions[index].isExpanded = index === selectedIndex ? !accordions[index].isExpanded : false
@@ -63,7 +49,7 @@
 
 </script>
 
-<style>
+<style scoped>
   .accordion-group {
     width: 100%;
   }

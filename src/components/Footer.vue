@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-      
+    <slot></slot>
   </div>
 </template>
   
@@ -18,5 +18,12 @@
     min-height: 80px;
     max-height: 160px;
     background-color: hsl(210, 50%, 25%);
+    display: grid;
+    place-content: center;
+  }
+
+  .footer > * {
+    margin: 0;
+    color: white;
   }
 </style>
