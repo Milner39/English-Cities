@@ -1,6 +1,6 @@
 <template>
   <Header>
-    <h1>English Cites</h1>
+    <SlideShow :slideData="slides"/>
   </Header>
   <Nav>
     <template #nav-links>
@@ -30,12 +30,25 @@
 <script setup>
 
   import Header from "./components/Header.vue"
+  import SlideShow from "./components/SlideShow.vue"
   import Nav from "./components/Nav.vue"
   import NavLink from "./components/NavLink.vue"
-  import CityPage from "./components/CityPage.vue"
   import Footer from "./components/Footer.vue"
-  import AccordionGroup from "./components/AccordionGroup.vue"
-  import Map from "./components/Map.vue"
+
+  const slides = [
+    {
+      text: "A",
+      imagePath: "../images/img1.jpg"
+    },
+    {
+      text: "B",
+      imagePath: "../images/img2.jpg"
+    },
+    {
+      text: "C",
+      imagePath: "../images/img3.jpg"
+    }
+  ]
 
 </script>
 

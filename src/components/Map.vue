@@ -35,6 +35,7 @@
         myMap = leaflet.map("mapId").setView(coords, 13)
         leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
         {
+          minZoom: 5,
           maxZoom: 20,
           attribution: '© OpenStreetMap'
         }).addTo(myMap)

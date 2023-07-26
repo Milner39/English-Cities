@@ -6,11 +6,6 @@
 
 <script setup>
 
-  import CityPage from '../components/CityPage.vue';
-  import AccordionGroup from '../components/AccordionGroup.vue';
-  import TabBar from '../components/TabBar.vue';
-  import Map from '../components/Map.vue';
-
 </script>
 
 <style>

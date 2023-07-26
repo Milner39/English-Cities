@@ -5,7 +5,7 @@
     </template>
     <template #main>
       <TabBar :tabData="tabs"/>
-      <Map cityName="london"/>
+      <Map cityName="London"/>
     </template>
   </CityPage>
 </template>
