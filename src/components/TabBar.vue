@@ -53,7 +53,7 @@
   }
 </script>
   
-<style scoped>
+<style>
   .tab-bar {
     width: 100%;
     height: 40px;
@@ -93,7 +93,6 @@
   }
 
   .tab__page {
-    width: 95%;
     margin: 0 auto
   }
 

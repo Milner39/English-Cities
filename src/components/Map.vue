@@ -55,7 +55,6 @@
 
 <style scoped>
   .map__container {
-    width: 100%;
     height: auto;
     aspect-ratio: 2/1;
 

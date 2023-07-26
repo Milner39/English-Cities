@@ -24,14 +24,21 @@
   }
 </script>
   
-<style scoped>
+<style>
   .city {
     width: 100%;
-    height: 100vh;
+    min-height: 80vh;
     background-color: hsl(210, 50%, 20%);
 
     display: grid;
     grid-template-columns: 30% 70%;
+  }
+
+  .main > *:not(.tab-bar) {
+    width: 95%;
+    padding: 1% 0;
+    margin: 0 auto;
+
   }
 
   .city > .side{

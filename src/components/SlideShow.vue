@@ -1,6 +1,6 @@
 <template>
   <div class="slideshow__container">
-    <div v-for="(slide, index) in slides" :key="slide.text+index" class="slide fade-in">
+    <div v-for="(slide, index) in slides" :key="slide.text+index" class="slide">
       <img :src="slide.imagePath" :alt="slide.text">  
     </div>
   </div>
@@ -25,15 +25,40 @@
     showSlides();
   
     function showSlides() {
-      let i;
+
+      // Get slides
       let slidesE = document.getElementsByClassName("slide");
-      for (i = 0; i < slidesE.length; i++) {
-        slidesE[i].style.display = "none";
+      console.log(slidesE[0].classList)
+
+
+
+      // Get the index of the prev slide
+      let i = slideIndex - 1
+      if (i == -1) {
+        i = slidesE.length - 1
       }
-      slideIndex++;
-      if (slideIndex > slidesE.length) {slideIndex = 1}
-      slidesE[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 5000); // Change image every 2 seconds
+
+      // Have the previous slide return to normal
+      console.log(i)
+      slidesE[i].classList.remove("fade-out")
+
+      // Have the current slide fade out
+      slidesE[slideIndex].classList.remove("fade-in")
+      slidesE[slideIndex].classList.add("fade-out")
+
+      // Increment slideIndex keeping within:    0 - 3
+      slideIndex = slideIndex + 1
+      if (slideIndex == slidesE.length) {
+        slideIndex = 0
+      }
+
+      // Have the next slide fade in
+      slidesE[slideIndex].classList.add("fade-in")
+
+
+
+      // Change image every 5 seconds
+      setTimeout(showSlides, 5000);
     }
   })
 
@@ -45,41 +70,49 @@
 
   .slideshow__container {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4/1;
     position: relative;
     overflow-x: hidden;
   }
 
   .slide {
     width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow-y: hidden;
+
     display: none;
   }
-  .fade-in {
+
+  .slide > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide.fade-in {
     animation-name: fade-in;
     animation-duration: 3s;
+
+    display: block;
+    z-index: 10;
   }
 
   @keyframes fade-in {
-    /* from {opacity: .5}
-    to {opacity: 1} */
     from {transform: translateX(100%)}
     to {transform: translateX(0)}
   }
 
-  .fade-out {
+  .slide.fade-out {
     animation-name: fade-out;
-    animation-duration: 1.5s;
+    animation-duration: 3s;
+
+    display: block;
+    z-index: 1;
   }
 
   @keyframes fade-out {
     from {transform: translateX(0%)}
     to {transform: translateX(-100%)}
-  }
-
-  .slide > img {
-    width: 100%;
-    max-height: 30vh;
-    object-fit: cover;
   }
 
 </style>
