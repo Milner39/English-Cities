@@ -54,27 +54,28 @@
     width: 100%;
   }
 
-  .accordion-group > *:nth-child(1) {
+  .accordion {
     border-style: solid;
     border-color: hsl(210, 50%, 80%);
-    border-width: 1px 0;
+    border-width: 0;
+    border-bottom-width: 2px;
   }
 
-  .accordion-group > *:not(:nth-child(1)) {
-    border-style: solid;
-    border-color: hsl(210, 50%, 80%);
-    border-width: 0 0 1px 0;
+  .accordion:first-child {
+    border-top-width: 2px;
   }
 
   .accordion-title {
     width: 100%;
-    height: 30px;
+    padding: 16px;
+    
     background-color: hsl(210, 50%, 20%);
     border: none;
+
     display: grid;
     place-content: center;
+
     font-size: 20px;
-    padding: 20px
   }
 
   .accordion-title:hover {
@@ -90,17 +91,19 @@
     transition: height var(--vc-auto-duration) cubic-bezier(0.3, 0, 0.6, 1);
   }
 
-  .accordion-text {
-    color: rgb(180, 180, 180);
-    margin: 0;
-    padding: 10px;
+  .accordion-expanded > * {
+    padding: 0 16px 16px 16px;
   }
 
-  .image-container {
-    width: 100%;
+  .accordion-text {
+    color: rgb(180, 180, 180);
   }
 
   .image-container > img {
     width: 100%;
+  }
+
+  .accordion-image {
+    border-radius: 16px;
   }
 </style>

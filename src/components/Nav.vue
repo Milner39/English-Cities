@@ -37,9 +37,6 @@
   }
 
   .nav-link__container {
-    width: 100%;
-    height: 100%;
-    
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -49,9 +46,6 @@
   }
 
   .call-to-action__container {
-    width: 100%;
-    height: 100%;
-
     display: flex;
     justify-content: flex-end;
     align-items: center;

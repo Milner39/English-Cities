@@ -89,31 +89,51 @@
   
 <style>
   .contact-page {
+    width: 100%;
     height: 80vh;
     background-color: hsl(210, 50%, 20%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .contact-form {
-    height: 100%;
+    width: 600px;
     display: grid;
     place-content: center;
+
+    border-style: solid;
+    border-radius: 16px;
+    border-width: 2px;
+    border-color: hsl(210, 0%, 50%)
+  }
+
+  .contact-form > * {
+    margin-bottom: 16px;
+  }
+
+  .contact-form > *:first-child {
+    margin-top: 16px;
   }
 
   .form {
-    width: 500px;
-    padding: 5% 0;
+    display: block;
   }
 
   .input-title {
-    margin-left: 2%;
+    margin-left: 16px;
   }
   
   .input {
-    width: 99%;
-    height: 30px;
-    padding-left: 2%;
+    width: calc(100% - 16px);
+    height: 32px;
+
+    padding: 0;
+    margin: 0;
+    padding-left: 16px;
 
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 16px;
     border-color: hsl(210, 0%, 50%);
     background-color: hsla(210, 50%, 20%, 20%);
 

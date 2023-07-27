@@ -65,8 +65,8 @@
 
   .tab {
     width: 10%;
-    min-width: 80px;
-    height: 40px;
+    min-width: 64px;
+    height: 32px;
 
     margin-left: 16px;
     margin-top: 16px;

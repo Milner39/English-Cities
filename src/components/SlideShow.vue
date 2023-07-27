@@ -60,7 +60,7 @@
 
 </script>
 
-<style scoped>
+<style>
 
   .slideshow__container {
     width: 100%;

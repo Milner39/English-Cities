@@ -62,7 +62,7 @@
     display: flex;
 
     width: 90%;
-    height: 1px;
+    height: 2px;
     position: absolute;
 
     background-color: white;
@@ -74,7 +74,7 @@
     display: flex;
 
     width: 75%;
-    height: 1px;
+    height: 2px;
     position: absolute;
 
     background-color: white;
