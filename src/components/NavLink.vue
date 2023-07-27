@@ -13,24 +13,24 @@
     
 <style>
   .nav-link {
-    height: 80%;
+    height: 100%;
     aspect-ratio: 2/1;
-    border-radius: 100px;
-    margin: 0 1%;
+    border-radius: 1000px;
+    margin: 4px;
 
     background-color: hsl(210, 50%, 20%);
-    color: white;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    
     transition: transform 50ms ease-in-out;
   }
 
   .nav-link > * {
-    color: white;
     text-decoration: none;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .nav-link:hover {

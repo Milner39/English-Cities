@@ -24,10 +24,6 @@
 <style>
   .nav {
     width: 100%;
-    aspect-ratio: 20/1;
-    min-height: 40px;
-    max-height: 60px;
-    
     background-color: hsl(210, 50%, 25%);
 
     position: sticky;
@@ -35,18 +31,21 @@
     top: 0px;
 
     display: grid;
-    grid-template-columns: 70% 25%;
-    column-gap: 5%;
+    grid-template-columns: 70% 30%;
+
+    padding: 16px 0;
   }
 
   .nav-link__container {
     width: 100%;
     height: 100%;
     
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: 16px;
+
+    margin-left: 16px;
   }
 
   .call-to-action__container {
@@ -56,5 +55,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    margin-right: 16px;
   }
 </style>

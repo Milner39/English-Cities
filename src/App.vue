@@ -10,14 +10,16 @@
       <NavLink>
         <router-link to="/london">London</router-link>
       </NavLink>
-      
+      <NavLink>
+        <router-link to="/manchester">Manchester</router-link>
+      </NavLink>
       <NavLink>
         <router-link to="/newcastle">Newcastle</router-link>
       </NavLink>
     </template>
     <template #call-to-action>
       <NavLink>
-        Contact Us
+        <router-link to="/contact">Contact Us</router-link>
       </NavLink>
     </template>
   </Nav>

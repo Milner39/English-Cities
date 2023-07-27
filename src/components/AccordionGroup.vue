@@ -73,7 +73,6 @@
     border: none;
     display: grid;
     place-content: center;
-    color: white;
     font-size: 20px;
     padding: 20px
   }

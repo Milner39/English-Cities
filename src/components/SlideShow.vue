@@ -28,9 +28,6 @@
 
       // Get slides
       let slidesE = document.getElementsByClassName("slide");
-      console.log(slidesE[0].classList)
-
-
 
       // Get the index of the prev slide
       let i = slideIndex - 1
@@ -39,7 +36,6 @@
       }
 
       // Have the previous slide return to normal
-      console.log(i)
       slidesE[i].classList.remove("fade-out")
 
       // Have the current slide fade out
@@ -54,8 +50,6 @@
 
       // Have the next slide fade in
       slidesE[slideIndex].classList.add("fade-in")
-
-
 
       // Change image every 5 seconds
       setTimeout(showSlides, 5000);

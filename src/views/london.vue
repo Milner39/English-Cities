@@ -1,6 +1,8 @@
 <template>
   <CityPage>
     <template #side>
+      <h1 class="title">London</h1>
+      <Chart cityName="London"/>
       <AccordionGroup :accordionData="accordions"/>
     </template>
     <template #main>
@@ -15,6 +17,7 @@
   import { ref, onMounted } from 'vue'
 
   import CityPage from '../components/CityPage.vue';
+  import Chart from '../components/Chart.vue';
   import AccordionGroup from '../components/AccordionGroup.vue';
   import TabBar from '../components/TabBar.vue';
   import Map from '../components/Map.vue';
@@ -56,13 +59,6 @@
       text: "This text has general info on travel in London"
     }
   ]
-
-
-
-  //var cityName = ref()
-  //onMounted(async() => {
-  //  cityName = "fix me!"
-  //})
 
 </script>
 

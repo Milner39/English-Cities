@@ -19,8 +19,4 @@
     place-content: center;
   }
 
-  .get-started > * {
-    color: white;
-  }
-
 </style>

@@ -1,9 +1,7 @@
 <template>
     <div class="city">
       <div class="side">
-        <div class="page">
-          <slot name="side"></slot>
-        </div>
+        <slot name="side"></slot> 
       </div>
       <div class="main">
         <slot name="main"></slot>
@@ -34,23 +32,51 @@
     grid-template-columns: 30% 70%;
   }
 
-  .main > *:not(.tab-bar) {
-    width: 95%;
-    padding: 1% 0;
-    margin: 0 auto;
-
+  .main {
+    background-color: hsl(210, 50%, 20%);
+    
+    padding: 16px;
   }
 
-  .city > .side{
+  .main > *:not(.tab-bar):not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .side {
     background-color: hsl(210, 50%, 30%);
+
+    padding: 16px;
+  }
+
+  .side > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .side > .title {
+    position: relative;
+  }
+
+  .side > .title::before {
+    content: "";
+
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
 
-  .side > .page {
     width: 90%;
-    padding-top: 40px;
+    height: 1px;
+    position: absolute;
+
+    background-color: white;
   }
 
+  .side > .title::after {
+    content: "";
+
+    display: flex;
+
+    width: 75%;
+    height: 1px;
+    position: absolute;
+
+    background-color: white;
+  }
 </style>

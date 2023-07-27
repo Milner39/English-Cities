@@ -16,8 +16,6 @@
     },
     setup(props) {
 
-      //console.log("Here", props.cityName)
-
       let myMap
       onMounted(async() => {
 
@@ -53,18 +51,28 @@
 
 </script>
 
-<style scoped>
+<style>
   .map__container {
-    height: auto;
-    aspect-ratio: 2/1;
+    width: 100%;
+    height: 600px;
 
     display: flex;
     justify-content: center;
   }
 
   .map {
-
-    width: 75%;
+    width: 100%;
     height: 100%;
+    border-radius: 16px;
   }
+
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out {
+    background-color: hsla(210, 50%, 30%, 0.5) !important;
+  }
+
+  .leaflet-popup-content {
+    color: black;
+  }
+
 </style>
