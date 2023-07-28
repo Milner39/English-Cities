@@ -66,9 +66,8 @@
     border-radius: 16px;
   }
 
-  .leaflet-control-zoom-in,
-  .leaflet-control-zoom-out {
-    background-color: hsla(210, 50%, 30%, 0.5) !important;
+  .leaflet-control-zoom {
+    display: none;
   }
 
   .leaflet-popup-content {

@@ -10,7 +10,7 @@
         ]"
           @click="handleAccordion(index)"
       >
-        {{ accordion.title }}
+        <h2>{{ accordion.title }}</h2>
       </button>
         <Collapse as="section" :when="accordion.isExpanded" class="accordion-expanded">
           <p class="accordion-text">
@@ -74,8 +74,6 @@
 
     display: grid;
     place-content: center;
-
-    font-size: 20px;
   }
 
   .accordion-title:hover {
@@ -96,7 +94,7 @@
   }
 
   .accordion-text {
-    color: rgb(180, 180, 180);
+    color: hsl(210, 0%, 50%);
   }
 
   .image-container > img {

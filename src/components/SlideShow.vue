@@ -1,7 +1,8 @@
 <template>
   <div class="slideshow__container">
     <div v-for="(slide, index) in slides" :key="slide.text+index" class="slide">
-      <img :src="slide.imagePath" :alt="slide.text">  
+      <img :src="slide.imagePath" :alt="slide.text" class="slide-image"> 
+      <h1 class="slide-text">{{ slide.text }}</h1> 
     </div>
   </div>
 </template>
@@ -78,9 +79,18 @@
     display: none;
   }
 
-  .slide > img {
+  .slide-image {
     width: 100%;
     height: 100%;
+
+    filter: brightness(50%);
+  }
+
+  .slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .slide.fade-in {

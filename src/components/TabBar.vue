@@ -8,7 +8,7 @@
     ]"
     >
       <div class="tab-title" @click="handleTab(index)">
-        {{ tab.title }}
+        <h4>{{ tab.title }}</h4>
       </div>
     </div>
   </div>

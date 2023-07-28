@@ -41,7 +41,7 @@
           pattern=".{1,}"
         >
       </form>
-      <button  class="submit" @click="handleSubmit()">SUBMIT</button>
+      <button  class="button" @click="handleSubmit()">SUBMIT</button>
     </div>
     <div class="success-page">
       <h1>Form Submited, Thank You!</h1>
@@ -97,15 +97,17 @@
     justify-content: center;
     align-items: center;
   }
+
   .contact-form {
-    width: 600px;
     display: grid;
     place-content: center;
 
     border-style: solid;
     border-radius: 16px;
     border-width: 2px;
-    border-color: hsl(210, 0%, 50%)
+    border-color: hsl(210, 0%, 50%);
+
+    padding: 0 16px;
   }
 
   .contact-form > * {
@@ -125,7 +127,8 @@
   }
   
   .input {
-    width: calc(100% - 16px);
+    /* -20px because 16px of padding left + 4px of border thickness */
+    width: calc(100% - 20px);
     height: 32px;
 
     padding: 0;
@@ -163,12 +166,11 @@
     color: hsl(0, 69%, 50%);
   }
 
-  .submit {
-    width: 90%;
+  .button {
+    width: 100%;
     height: 50px;
     border: none;
     border-radius: 100px;
-    margin: 0 auto;
 
     background-color: hsl(210, 50%, 25%);
     font-size: 20px;
@@ -180,11 +182,11 @@
     transition: transform 50ms ease-in-out;
   }
 
-  .submit:hover {
+  .button:hover {
     transform: scale(1.05);
   }
 
-  .submit:active {
+  .button:active {
     transform: scale(1);
   }
 
