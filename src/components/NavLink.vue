@@ -21,6 +21,8 @@
     background-color: hsl(210, 50%, 20%);
     
     transition: transform 50ms ease-in-out;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
   }
 
   .nav-link > * {

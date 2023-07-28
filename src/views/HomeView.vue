@@ -76,6 +76,12 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+  }
+
+  .card-image__container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
   }
 
   .card-image {

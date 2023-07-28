@@ -25,7 +25,7 @@
   </Nav>
   <RouterView/>
   <Footer>
-    <!-- <h1>FOOTER STUFF</h1> -->
+    
   </Footer>
 </template>
 
