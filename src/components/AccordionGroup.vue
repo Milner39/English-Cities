@@ -76,10 +76,10 @@
     place-content: center;
   }
 
-  .accordion-title:hover {
+  .accordion-title:hover > * {
     color: hsl(210, 50%, 80%);
   }
-  .accordion-title.active {
+  .accordion-title.active > * {
     color: hsl(210, 50%, 80%);
   }
 

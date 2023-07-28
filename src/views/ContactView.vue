@@ -28,10 +28,9 @@
 
         <label for="email" class="input-title">Email:<span class="red">*</span></label>
         <br>
-        <input type="text" id="email" name="email" class="input"
+        <input type="email" id="email" name="email" class="input"
           placeholder="example@email.com..."
-          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-        >
+          >
         <br><br>
 
         <label for="message" class="input-title">Message:<span class="red">*</span></label>

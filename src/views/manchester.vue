@@ -26,37 +26,42 @@
   
     const accordions = [
       {
-        title: "Landmark1",
-        text: "Wow, so cool",
-        imagePath: ""
+        title: "Beetham Tower",
+        text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+        imagePath: "../images/beethamTower.jpg"
       },
       {
-        title: "Landmark2",
-        text: "Super cool",
-        imagePath: ""
+        title: "The Printworks",
+        text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+        imagePath: "../images/thePrintworks.jpg"
       },
       {
-        title: "Landmark3",
-        text: "Very cool",
-        imagePath: ""
-      }
+        title: "Urbis",
+        text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+        imagePath: "../images/urbis.jpg"
+      },
+      {
+        title: "Central Library",
+        text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+        imagePath: "../images/centralLibrary.jpg"
+      },
     ]
   
     const tabs = [
       {
         title: "About",
         header: "ABOUT",
-        text: "This text has general info on Manchester"
+        text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
       },
       {
         title: "Landmarks",
         header: "LANDMARKS",
-        text: "This text has general info on landmarks in Manchester"
+        text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
       },
       {
         title: "Travel",
         header: "TRAVEL",
-        text: "This text has general info on travel in Manchester"
+        text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
       }
     ]
   

@@ -52,7 +52,6 @@
         gradient.addColorStop(0, `rgba(${colors[0]}, ${alpha})`)
         gradient.addColorStop(0.5, `rgba(${colors[1]}, ${alpha}`);
         gradient.addColorStop(1, `rgba(${colors[2]}, ${alpha}`);
-
       }
       return gradient;
     }

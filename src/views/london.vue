@@ -27,17 +27,17 @@
   const accordions = [
     {
       title: "Big Ben",
-      text: "Wow, so cool",
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       imagePath: "../images/bigBen.jpg"
     },
     {
       title: "London Eye",
-      text: "Cool but doesn't look like an eye",
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       imagePath: "../images/londonEye.jpg"
     },
     {
       title: "Tower Bridge",
-      text: "Very cool",
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       imagePath: "../images/towerBridge.jpg"
     }
   ]
@@ -46,17 +46,17 @@
     {
       title: "About",
       header: "ABOUT",
-      text: "This text has general info on London"
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
     },
     {
       title: "Landmarks",
       header: "LANDMARKS",
-      text: "This text has general info on landmarks in London"
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
     },
     {
       title: "Travel",
       header: "TRAVEL",
-      text: "This text has general info on travel in London"
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
     }
   ]
 

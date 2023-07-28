@@ -90,10 +90,10 @@
     place-content: center;
   }
 
-  .tab.active .tab-title {
+  .tab.active .tab-title > * {
     color: hsl(210, 50%, 80%);
   }
-  .tab-title:hover {
+  .tab-title:hover > * {
     color: hsl(210, 50%, 80%);
   }
 

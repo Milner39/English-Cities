@@ -27,17 +27,17 @@
   const accordions = [
     {
       title: "Grays' Monument",
-      text: "Wow, so cool",
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       imagePath: "../images/graysMonument.jpg"
     },
     {
       title: "Millennium Bridge",
-      text: "Sorta cool",
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       imagePath: "../images/millenniumBridge.jpg"
     },
     {
       title: "St James' Park",
-      text: "Very cool",
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
       imagePath: "../images/stJamesPark.jpg"
     }
   ]
@@ -46,17 +46,17 @@
     {
       title: "About",
       header: "ABOUT",
-      text: "This text has general info on Newcastle"
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
     },
     {
       title: "Landmarks",
       header: "LANDMARKS",
-      text: "This text has general info on landmarks in Newcastle"
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
     },
     {
       title: "Travel",
       header: "TRAVEL",
-      text: "This text has general info on travel in newcastle"
+      text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
     }
   ]
 
