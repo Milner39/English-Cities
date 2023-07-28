@@ -11,7 +11,7 @@
             <h1 class="card-title">London</h1>
             <p class="card-description">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
           </div>
-          <router-link to="/london" class="button go">Go</router-link>
+          <router-link to="/london" class="button go"><h2>GO</h2></router-link>
         </div>
       </div>
 
@@ -24,7 +24,7 @@
             <h1 class="card-title">Manchester</h1>
             <p class="card-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
           </div>
-          <router-link to="/manchester" class="button go">Go</router-link>
+          <router-link to="/manchester" class="button go"><h2>GO</h2></router-link>
         </div>
       </div>
 
@@ -37,7 +37,7 @@
             <h1 class="card-body__title">Newcastle</h1>
             <p class="card-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
           </div>
-          <router-link to="/newcastle" class="button go">Go</router-link>
+          <router-link to="/newcastle" class="button go"><h2>GO</h2></router-link>
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@
           pattern=".{1,}"
         >
       </form>
-      <button  class="button" @click="handleSubmit()">SUBMIT</button>
+      <button  class="button" @click="handleSubmit()"><h2>SUBMIT</h2></button>
     </div>
     <div class="success-page">
       <h1>Form Submited, Thank You!</h1>
@@ -167,12 +167,12 @@
 
   .button {
     width: 100%;
-    height: 50px;
+    padding: 8px 0;
     border: none;
     border-radius: 100px;
 
     background-color: hsl(210, 50%, 25%);
-    font-size: 20px;
+  
 
     display: flex;
     justify-content: center;
