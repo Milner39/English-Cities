@@ -19,7 +19,7 @@
       text,
       imagePath
     }))
-  )
+  ) 
 
   onMounted(() => {
     let slideIndex = 0;

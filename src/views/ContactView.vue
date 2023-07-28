@@ -71,7 +71,7 @@
     contactForm[0].style.display = "none"
 
     const successPage = document.getElementsByClassName("success-page")
-    successPage[0].style.display = "grid"
+    successPage[0].style.display = "flex"
   }
 
   const closeModal = () => {
@@ -190,9 +190,7 @@
   }
 
   .modal {
-    width: 60%;
-    max-width: 600px;
-    aspect-ratio: 2/1;
+    padding: 128px;
     background-color: hsl(210, 50%, 25%);
 
     display: none;
@@ -206,6 +204,14 @@
     transform: translate(-50%, -50%);
 
     border-radius: 20px;
+
+    animation-name: slide-down;
+    animation-duration: 1s;
+  }
+
+  @keyframes slide-down {
+    from {top: -50%;}
+    to {top: 50%;}
   }
 
   .close__container {
@@ -245,7 +251,6 @@
   }
 
   .error-msg {
-    width: 80%;
     text-align: center;
   }
 
