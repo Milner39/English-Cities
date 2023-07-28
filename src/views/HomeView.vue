@@ -65,7 +65,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 32px;
   }
 
   .card {
