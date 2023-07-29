@@ -16,7 +16,7 @@
     height: 100%;
     aspect-ratio: 2/1;
     border-radius: var(--space-3);
-    margin: var(--space-5);
+    padding: var(--space-5);
 
     background-color: hsl(210, 50%, 20%);
     

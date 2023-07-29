@@ -1,6 +1,6 @@
 <template>
   <div class="accordion-group">
-    <div v-for="(accordion, index) in accordions" :key="accordion.title" class="accordion">
+    <div v-for="(accordion, index) in accordions" :key="accordion.imageTitle" class="accordion">
       <button
         :class="[
           'accordion-title',
@@ -10,14 +10,14 @@
         ]"
           @click="handleAccordion(index)"
       >
-        <h5>{{ accordion.title }}</h5>
+        <h5>{{ accordion.imageTitle }}</h5>
       </button>
         <Collapse as="section" :when="accordion.isExpanded" class="accordion-expanded">
           <p class="accordion-text">
-            {{ accordion.text }}
+            {{ accordion.imageDescription }}
           </p>
           <div class="image-container">
-            <img :src="accordion.imagePath" :alt="accordion.title" class="accordion-image"/>
+            <img :src="accordion.imagePath" :alt="accordion.imageTitle" class="accordion-image"/>
           </div>
         </Collapse>
     </div>
@@ -28,18 +28,24 @@
 
   import { reactive } from "vue"
   import { Collapse } from "vue-collapsed"
+  import cityData from "../cityData.json"
 
-  const props = defineProps(["accordionData"])
-  const accordionData = props.accordionData
+  const props = defineProps(["cityName"])
+  const cityName = props.cityName
 
-  const accordions = reactive(
-    accordionData.map(({ title, text, imagePath }, index) => ({
-      title,
-      text,
-      imagePath,
-      isExpanded: index === null
-    }))
-  )
+
+  let accordions = []
+  if (cityData.cities[cityName]) { 
+    const accordionData = cityData.cities[cityName].images
+    accordions = reactive(
+      accordionData.map(({ imageTitle, imageDescription, imagePath }, index) => ({
+        imageTitle,
+        imageDescription,
+        imagePath: "../images/cities/" + cityName + "/" + imagePath,
+        isExpanded: index === null
+      }))
+    )
+  }
  
   function handleAccordion(selectedIndex) {
     accordions.forEach((_, index) => {

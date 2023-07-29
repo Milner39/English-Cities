@@ -128,6 +128,7 @@
     padding: 0;
     margin: 0;
     padding-left: var(--padding);
+    outline: none;
 
     border-style: solid;
     border-width: var(--border-width);
@@ -159,30 +160,7 @@
     color: hsl(0, 69%, 50%);
   }
 
-  .button {
-    width: 100%;
-    padding: var(--space-3) 0;
-    border: none;
-    border-radius: var(--space-3);
 
-    background-color: hsl(210, 50%, 25%);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: transform 50ms ease-in-out;
-
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
-  }
-
-  .button:hover {
-    transform: scale(1.05);
-  }
-
-  .button:active {
-    transform: scale(1);
-  }
 
   .modal {
     width: calc(100% - var(--space-1));
@@ -231,9 +209,10 @@
     border-radius: 100%;
     border: none;
     background-color: hsl(210, 50%, 20%);
-    font-size: 20px;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .close-button > svg {

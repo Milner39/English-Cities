@@ -8,13 +8,13 @@
         <router-link to="/"><h6>Home</h6></router-link>
       </NavLink>
       <NavLink>
-        <router-link to="/london"><h6>London</h6></router-link>
+        <router-link to="/city/london"><h6>London</h6></router-link>
       </NavLink>
       <NavLink>
-        <router-link to="/manchester"><h6>Manchester</h6></router-link>
+        <router-link to="/city/manchester"><h6>Manchester</h6></router-link>
       </NavLink>
       <NavLink>
-        <router-link to="/newcastle"><h6>Newcastle</h6></router-link>
+        <router-link to="/city/newcastle"><h6>Newcastle</h6></router-link>
       </NavLink>
     </template>
     <template #call-to-action>
@@ -23,9 +23,45 @@
       </NavLink>
     </template>
   </Nav>
-  <RouterView/>
+  <RouterView :key="$route.fullPath"/> 
   <Footer>
-    
+    <div class="links__container">
+
+      <div class="section">
+        <h4 class="section-title">About Me</h4>
+        <div class="section-links">
+          <a class="link">Link</a>
+          <a class="link">Link</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h4 class="section-title">Website Information</h4>
+        <div class="section-links">
+          <a class="link">Link</a>
+          <a class="link">Link</a>
+          <a class="link">Link</a>
+          <a class="link">Link</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h4 class="section-title">Contact Information</h4>
+        <div class="section-links">
+          <a class="link">Link</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h4 class="section-title">Stay Connected</h4>
+        <div class="section-links icons">
+          <a class="link"><indeed/></a>
+          <a class="link"><discord/></a>
+          <a class="link"><github/></a>
+        </div>
+      </div>
+
+    </div>
   </Footer>
 </template>
 
@@ -37,18 +73,23 @@
   import NavLink from "./components/NavLink.vue"
   import Footer from "./components/Footer.vue"
 
+  import indeed from "../public/svgs/indeed.vue"
+  import discord from "../public/svgs/discord.vue"
+  import github from "../public/svgs/github.vue"
+ 
+
   const slides = [
     {
       text: "London",
-      imagePath: "../images/img1.jpg"
+      imagePath: "../images/banner/img1.jpg"
     },
     {
       text: "Newcastle",
-      imagePath: "../images/img2.jpg"
+      imagePath: "../images/banner/img2.jpg"
     },
     {
       text: "Manchester",
-      imagePath: "../images/img3.jpg"
+      imagePath: "../images/banner/img3.jpg"
     }
   ]
 

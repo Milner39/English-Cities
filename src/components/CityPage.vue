@@ -9,17 +9,8 @@
     </div>
 </template>
   
-<script>
-  import AccordionGroup from './AccordionGroup.vue';
-  import TabBar from './TabBar.vue';
-    
-  export default {
-    name: "CityPage",
-    components: {
-      AccordionGroup,
-      TabBar
-    }
-  }
+<script setup>
+
 </script>
   
 <style>

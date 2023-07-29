@@ -1,0 +1,138 @@
+{
+  "cities": {
+    "London": {
+      "images": 
+      [
+        {
+          "imageTitle": "Big Ben",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "bigBen.jpg"
+        },
+        {
+          "imageTitle": "London Eye",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "londonEye.jpg"
+        },
+        {
+          "imageTitle": "Tower Bridge",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "towerBridge.jpg"
+        }
+      ],
+      "tabs": 
+      [
+        {
+          "tabTitle": "About",
+          "tabHeader": "About",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Travel",
+          "tabHeader": "Travel",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Landmarks",
+          "tabHeader": "Landmarks",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Culture",
+          "tabHeader": "Culture",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        }
+      ]
+    },
+    "Manchester": {
+      "images": 
+      [
+        {
+          "imageTitle": "Beetham Tower",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "beethamTower.jpg"
+        },
+        {
+          "imageTitle": "Central Library",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "centralLibrary.jpg"
+        },
+        {
+          "imageTitle": "The Printworks",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "thePrintworks.jpg"
+        },
+        {
+          "imageTitle": "Urbis",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "urbis.jpg"
+        }
+      ],
+      "tabs": 
+      [
+        {
+          "tabTitle": "About",
+          "tabHeader": "About",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Travel",
+          "tabHeader": "Travel",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Landmarks",
+          "tabHeader": "Landmarks",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Culture",
+          "tabHeader": "Culture",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        }
+      ]
+    },
+    "Newcastle": {
+      "images": 
+      [
+        {
+          "imageTitle": "Gray's Monument",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "graysMonument.jpg"
+        },
+        {
+          "imageTitle": "Millennium Bridge",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "millenniumBridge.jpg"
+        },
+        {
+          "imageTitle": "St James' Park",
+          "imageDescription": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "imagePath": "stJamesPark.jpg"
+        }
+      ],
+      "tabs": 
+      [
+        {
+          "tabTitle": "About",
+          "tabHeader": "About",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Travel",
+          "tabHeader": "Travel",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Landmarks",
+          "tabHeader": "Landmarks",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        },
+        {
+          "tabTitle": "Culture",
+          "tabHeader": "Culture",
+          "tabText": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+        }
+      ]
+    }
+  }
+}

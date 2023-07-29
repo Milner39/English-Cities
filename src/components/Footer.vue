@@ -1,50 +1,12 @@
 <template>
   <div class="footer">
     <slot></slot>
-    <div class="links__container">
 
-      <div class="section">
-        <h4 class="section-title">About Me</h4>
-        <div class="section-links">
-          <a class="link">Link</a>
-          <a class="link">Link</a>
-        </div>
-      </div>
-
-      <div class="section">
-        <h4 class="section-title">Website Information</h4>
-        <div class="section-links">
-          <a class="link">Link</a>
-          <a class="link">Link</a>
-          <a class="link">Link</a>
-          <a class="link">Link</a>
-        </div>
-      </div>
-
-      <div class="section">
-        <h4 class="section-title">Contact Information</h4>
-        <div class="section-links">
-          <a class="link">Link</a>
-        </div>
-      </div>
-
-      <div class="section">
-        <h4 class="section-title">Stay Connected</h4>
-        <div class="section-links icons">
-          <a class="link"><indeed/></a>
-          <a class="link"><discord/></a>
-          <a class="link"><github/></a>
-        </div>
-      </div>
-
-    </div>
   </div>
 </template>
   
 <script setup>
-  import indeed from "../../public/svgs/indeed.vue"
-  import discord from "../../public/svgs/discord.vue"
-  import github from "../../public/svgs/github.vue"
+
 </script>
   
 <style>
@@ -52,12 +14,16 @@
     width: 100%;
     background-color: hsl(210, 50%, 25%);
 
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
   }
 
   .links__container {
-    padding: var(--space-2);
+    --margin: var(--space-2);
+    margin: var(--margin);
     display: flex;
     gap: var(--space-1);
   }
@@ -110,7 +76,7 @@
     }
     .links__container {
       flex-direction: column;
-      width: 100%;
+      width: calc(100% - var(--margin) * 2);
     }
     .section.section::before {
       width: 100%;

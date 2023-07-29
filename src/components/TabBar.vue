@@ -1,6 +1,6 @@
 <template>
   <div class="tab-bar">
-    <div v-for="(tab, index) in tabs" :key="tab.title" :class="[
+    <div v-for="(tab, index) in tabs" :key="tab.tabTitle" :class="[
       'tab',
       {
         active: tab.isActive
@@ -8,15 +8,15 @@
     ]"
     >
       <div class="tab-title" @click="handleTab(index)">
-        <h6>{{ tab.title }}</h6>
+        <h6>{{ tab.tabTitle }}</h6>
       </div>
     </div>
   </div>
   <div class="tab__page">
-    <div v-for="(tab, index) in tabs" :key="tab.title" :class="[{ active: selectedIndex === index }]">
-      <h3>{{ tab.header }}</h3>
+    <div v-for="(tab, index) in tabs" :key="tab.tabTitle" :class="[{ active: selectedIndex === index }]">
+      <h3>{{ tab.tabHeader }}</h3>
       <p>
-        {{ tab.text }}
+        {{ tab.tabText }}
       </p>
     </div>
   </div>
@@ -25,18 +25,24 @@
 <script setup>
 
   import { reactive } from "vue"
+  import cityData from "../cityData.json"
 
-  const props = defineProps(["tabData"])
-  const tabData = props.tabData
+  const props = defineProps(["tabData", "cityName"])
+  const cityName = props.cityName
 
-  const tabs = reactive(
-    tabData.map(({ title, header, text }, index) => ({
-      title,
-      header,
-      text,
-      isActive: index === 0
-    }))
-  )
+
+  let tabs = []
+  if (cityData.cities[cityName]) { 
+    const tabData = cityData.cities[cityName].tabs
+    tabs = reactive(
+      tabData.map(({ tabTitle, tabHeader, tabText }, index) => ({
+        tabTitle,
+        tabHeader,
+        tabText,
+        isActive: index === 0
+      }))
+    )
+  }
 
   var selectedIndex = 0
   function setSelectedIndex(index) {

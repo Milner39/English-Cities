@@ -21,18 +21,24 @@
     const response = await fetch("https://api.api-ninjas.com/v1/airquality?city=" + cityName, request)
     const data =  await response.json()
 
+
     let airQuality = []
     let index = 0
     for (let key in data) {
       if (key == "overall_aqi") {
+        airQuality[index] = {
+          type: "Overall AQI",
+          aqi: data[key]
+        }
         break
       }
       airQuality[index] = {
         type: key,
-        concentration: data[key]["concentration"]
+        aqi: data[key]["aqi"]
       }
       index++
     }
+  
 
     let width, height, gradient;
     function getGradient(ctx, chartArea, alpha) {
@@ -78,8 +84,8 @@
           labels: airQuality.map(row => row.type),
           datasets: [
             {
-              label: "Concentration",
-              data: airQuality.map(row => row.concentration),
+              label: "AQI",
+              data: airQuality.map(row => row.aqi),
               backgroundColor: function(context) {
                 const chart = context.chart
                 const {ctx, chartArea} = chart
@@ -93,6 +99,11 @@
           ]
         },
         options: {
+          scales: {
+            y: {
+              max: 500
+            }
+          },
           devicePixelRatio: 1.5,
           responsive: true,
           maintainAspectRatio: false,
