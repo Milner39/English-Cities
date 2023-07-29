@@ -8,10 +8,10 @@
         </div>
         <div class="card-body">
           <div class="card-text__container">
-            <h1 class="card-title">London</h1>
+            <h4 class="card-title">London</h4>
             <p class="card-description">Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
           </div>
-          <router-link to="/london" class="button go"><h2>GO</h2></router-link>
+          <router-link to="/london" class="button go"><h5>GO</h5></router-link>
         </div>
       </div>
 
@@ -21,10 +21,10 @@
         </div>
         <div class="card-body">
           <div class="card-text__container">
-            <h1 class="card-title">Manchester</h1>
+            <h4 class="card-title">Manchester</h4>
             <p class="card-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
           </div>
-          <router-link to="/manchester" class="button go"><h2>GO</h2></router-link>
+          <router-link to="/manchester" class="button go"><h5>GO</h5></router-link>
         </div>
       </div>
 
@@ -34,10 +34,10 @@
         </div>
         <div class="card-body">
           <div class="card-text__container">
-            <h1 class="card-body__title">Newcastle</h1>
+            <h4 class="card-body__title">Newcastle</h4>
             <p class="card-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
           </div>
-          <router-link to="/newcastle" class="button go"><h2>GO</h2></router-link>
+          <router-link to="/newcastle" class="button go"><h5>GO</h5></router-link>
         </div>
       </div>
     </div>
@@ -51,8 +51,6 @@
 
 <style>
   .get-started {
-    width: 100%;
-
     background-color: hsl(210, 50%, 20%);
 
     display: flex;
@@ -60,7 +58,8 @@
     
   }
   .cards-container {
-    padding: 32px;
+    max-width: 100%;
+    margin: 32px;
 
     display: flex;
     justify-content: center;
@@ -69,7 +68,7 @@
   }
 
   .card {
-    width: 300px;
+    max-width: 300px;
     height: 100%;
     background-color: hsl(210, 50%, 25%);
     border-radius: 16px;
@@ -113,6 +112,15 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+  }
+
+  @media (max-width: 1000px) {
+    .cards-container {
+      flex-direction: column;
+    }
+    .card {
+      height: fit-content;
+    }
   }
 
 </style>

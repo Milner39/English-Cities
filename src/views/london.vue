@@ -2,6 +2,7 @@
   <CityPage>
     <template #side>
       <h1 class="title">London</h1>
+      <h4>Air Pollution</h4>
       <Chart cityName="London"/>
       <AccordionGroup :accordionData="accordions"/>
     </template>

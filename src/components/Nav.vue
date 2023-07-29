@@ -9,16 +9,8 @@
   </div>
 </template>
   
-<script scoped>
+<script setup>
   
-  import NavLink from './NavLink.vue';
-
-  export default {
-      name: "Nav",
-      components: {
-        NavLink
-      }
-    }
 </script>
   
 <style>
@@ -31,18 +23,18 @@
     top: 0px;
 
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 80% 20%;
 
-    padding: 16px 0;
+    padding: var(--space-3) 0;
   }
 
   .nav-link__container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 16px;
+    gap: var(--space-3);
 
-    margin-left: 16px;
+    margin-left: var(--space-3);
   }
 
   .call-to-action__container {
@@ -50,6 +42,16 @@
     justify-content: flex-end;
     align-items: center;
 
-    margin-right: 16px;
+    margin-right: var(--space-3);
+  }
+
+  @media (max-width: 800px) {
+    .nav {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .nav-link:not(.mobile) {
+      display: none;
+    }
   }
 </style>

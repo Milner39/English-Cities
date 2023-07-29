@@ -2,7 +2,7 @@
   <div class="page-darken" @click="closeModal()"></div>
   <div class="modal">
     <div class="close__container">
-      <button class="close" @click="closeModal()">X</button>
+      <button class="close-button" @click="closeModal()"><close/></button>
     </div>
     <h1 class="error-msg">
       Form Not Valid, Try Again
@@ -10,7 +10,7 @@
   </div>
   <div class="contact-page">
     <div class="contact-form">
-      <h2 class="heading">Inputs marked with <span class="red">*</span> are required</h2>
+      <h4 class="heading">Inputs marked with <span class="red">*</span> are required</h4>
       <form class="form">
         <label for="fname" class="input-title">First Name:</label>
         <br>
@@ -40,7 +40,7 @@
           pattern=".{1,}"
         >
       </form>
-      <button  class="button" @click="handleSubmit()"><h2>SUBMIT</h2></button>
+      <button  class="button" @click="handleSubmit()"><h5>SUBMIT</h5></button>
     </div>
     <div class="success-page">
       <h1>Form Submited, Thank You!</h1>
@@ -49,10 +49,9 @@
 </template>
   
 <script setup>
-  import { onMounted } from 'vue';
+  import close from '../../public/svgs/close.vue';
 
   const handleSubmit = () => {
-    console.log("Clicked")
     const inputs = document.getElementsByClassName("input")
     const requiredIndex = [2,3]
     for (let index = 0; index < inputs.length; index++) {
@@ -83,13 +82,11 @@
   }
   
  
-  
 </script>
   
 <style>
   .contact-page {
     width: 100%;
-    height: 80vh;
     background-color: hsl(210, 50%, 20%);
 
     display: flex;
@@ -102,19 +99,16 @@
     place-content: center;
 
     border-style: solid;
-    border-radius: 16px;
-    border-width: 2px;
+    border-radius: var(--space-3);
+    border-width: var(--space-6);
     border-color: hsl(210, 0%, 50%);
 
-    padding: 0 16px;
+    margin: var(--space-2);
+    padding: var(--space-3);
   }
 
-  .contact-form > * {
-    margin-bottom: 16px;
-  }
-
-  .contact-form > *:first-child {
-    margin-top: 16px;
+  .contact-form > *:not(:first-child) {
+    margin-top: var(--space-3);
   }
 
   .form {
@@ -122,24 +116,24 @@
   }
 
   .input-title {
-    margin-left: 16px;
+    margin-left: var(--space-3);
   }
   
   .input {
-    /* -20px because 16px of padding left + 4px of border thickness */
-    width: calc(100% - 20px);
-    height: 32px;
+    --padding: var(--space-3);
+    --border-width: var(--space-6);
+    width: calc(100% - var(--padding) - (var(--border-width) * 2));
+    height: var(--space-2);
 
     padding: 0;
     margin: 0;
-    padding-left: 16px;
+    padding-left: var(--padding);
 
     border-style: solid;
-    border-radius: 16px;
+    border-width: var(--border-width);
+    border-radius: var(--space-3);
     border-color: hsl(210, 0%, 50%);
     background-color: hsla(210, 50%, 20%, 20%);
-
-    
   }
 
   input:-webkit-autofill,
@@ -167,9 +161,9 @@
 
   .button {
     width: 100%;
-    padding: 8px 0;
+    padding: var(--space-3) 0;
     border: none;
-    border-radius: 100px;
+    border-radius: var(--space-3);
 
     background-color: hsl(210, 50%, 25%);
 
@@ -191,7 +185,9 @@
   }
 
   .modal {
-    padding: 128px;
+    width: calc(100% - var(--space-1));
+    max-width: 800px;
+    min-height: 30vh;
     background-color: hsl(210, 50%, 25%);
 
     display: none;
@@ -204,7 +200,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    border-radius: 20px;
+    border-radius: var(--space-2);
 
     animation-name: slide-down;
     animation-duration: 1s;
@@ -220,22 +216,29 @@
     top: 0;
     right: 0;
 
-    width: 8%;
-    aspect-ratio: 1/1;
+    margin: var(--space-3);
 
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .close {
-    width: 75%;
+  .close-button {
+    padding: 8px;
+
     aspect-ratio: 1/1;
-    padding: 0;
+
     border-radius: 100%;
     border: none;
     background-color: hsl(210, 50%, 20%);
     font-size: 20px;
+
+    display: flex;
+  }
+
+  .close-button > svg {
+    width: var(--space-3);
+    height: var(--space-3);
   }
 
   .page-darken {
@@ -252,13 +255,14 @@
   }
 
   .error-msg {
+    margin: var(--space-1);
     text-align: center;
   }
 
   .success-page {
-    height: 100%;
     display: none;
     place-content: center;
+    padding: var(--space-1);
   }
 </style>
   

@@ -10,14 +10,14 @@
         ]"
           @click="handleAccordion(index)"
       >
-        <h2>{{ accordion.title }}</h2>
+        <h6>{{ accordion.title }}</h6>
       </button>
         <Collapse as="section" :when="accordion.isExpanded" class="accordion-expanded">
           <p class="accordion-text">
             {{ accordion.text }}
           </p>
           <div class="image-container">
-            <img :src="accordion.imagePath" class="accordion-image"/>
+            <img :src="accordion.imagePath" :alt="accordion.title" class="accordion-image"/>
           </div>
         </Collapse>
     </div>
@@ -37,7 +37,7 @@
       title,
       text,
       imagePath,
-      isExpanded: index === 0
+      isExpanded: index === null
     }))
   )
  
@@ -49,7 +49,7 @@
 
 </script>
 
-<style scoped>
+<style>
   .accordion-group {
     width: 100%;
   }
@@ -58,16 +58,16 @@
     border-style: solid;
     border-color: hsl(210, 50%, 80%);
     border-width: 0;
-    border-bottom-width: 2px;
+    border-bottom-width: var(--space-6);
   }
 
   .accordion:first-child {
-    border-top-width: 2px;
+    border-top-width: var(--space-6);
   }
 
   .accordion-title {
     width: 100%;
-    padding: 16px;
+    padding: var(--space-3);
     
     background-color: hsl(210, 50%, 20%);
     border: none;
@@ -90,7 +90,7 @@
   }
 
   .accordion-expanded > * {
-    padding: 0 16px 16px 16px;
+    padding: 0 var(--space-3) var(--space-3) var(--space-3);
   }
 
   .accordion-text {
@@ -102,6 +102,6 @@
   }
 
   .accordion-image {
-    border-radius: 16px;
+    border-radius: var(--space-3);
   }
 </style>

@@ -4,22 +4,22 @@
   </Header>
   <Nav>
     <template #nav-links>
-      <NavLink>
-        <router-link to="/"><h4>Home</h4></router-link>
+      <NavLink class="mobile">
+        <router-link to="/"><h6>Home</h6></router-link>
       </NavLink>
       <NavLink>
-        <router-link to="/london"><h4>London</h4></router-link>
+        <router-link to="/london"><h6>London</h6></router-link>
       </NavLink>
       <NavLink>
-        <router-link to="/manchester"><h4>Manchester</h4></router-link>
+        <router-link to="/manchester"><h6>Manchester</h6></router-link>
       </NavLink>
       <NavLink>
-        <router-link to="/newcastle"><h4>Newcastle</h4></router-link>
+        <router-link to="/newcastle"><h6>Newcastle</h6></router-link>
       </NavLink>
     </template>
     <template #call-to-action>
-      <NavLink>
-        <router-link to="/contact"><h4>Contact Us</h4></router-link>
+      <NavLink class="mobile">
+        <router-link to="/contact"><h6>Contact Us</h6></router-link>
       </NavLink>
     </template>
   </Nav>

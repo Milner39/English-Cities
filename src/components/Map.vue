@@ -38,8 +38,8 @@
           attribution: '© OpenStreetMap'
         }).addTo(myMap)
         const circle = leaflet.circle(coords, {
-          color: "red",
-          fillColor: "#f03",
+          color: "hsl(210, 50%, 30%)",
+          fillColor: "hsl(210, 50%, 30%)",
           fillOpacity: "0.5",
           radius: 1000
         }).addTo(myMap)
@@ -54,7 +54,7 @@
 <style>
   .map__container {
     width: 100%;
-    height: 600px;
+    height: 512px;
 
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@
   .map {
     width: 100%;
     height: 100%;
-    border-radius: 16px;
+    border-radius: var(--space-3);
   }
 
   .leaflet-control-zoom {

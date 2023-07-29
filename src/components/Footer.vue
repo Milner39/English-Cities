@@ -4,7 +4,7 @@
     <div class="links__container">
 
       <div class="section">
-        <h2 class="section-title">About Me</h2>
+        <h4 class="section-title">About Me</h4>
         <div class="section-links">
           <a class="link">Link</a>
           <a class="link">Link</a>
@@ -12,7 +12,7 @@
       </div>
 
       <div class="section">
-        <h2 class="section-title">Website Information</h2>
+        <h4 class="section-title">Website Information</h4>
         <div class="section-links">
           <a class="link">Link</a>
           <a class="link">Link</a>
@@ -22,14 +22,14 @@
       </div>
 
       <div class="section">
-        <h2 class="section-title">Contact Information</h2>
+        <h4 class="section-title">Contact Information</h4>
         <div class="section-links">
           <a class="link">Link</a>
         </div>
       </div>
 
       <div class="section">
-        <h2 class="section-title">Stay Connected</h2>
+        <h4 class="section-title">Stay Connected</h4>
         <div class="section-links icons">
           <a class="link"><indeed/></a>
           <a class="link"><discord/></a>
@@ -57,15 +57,15 @@
   }
 
   .links__container {
-    padding: 32px;
+    padding: var(--space-2);
     display: flex;
-    gap: 64px;
+    gap: var(--space-1);
   }
 
   .section {
     position: relative;
     display: flex;
-    gap: 16px;
+    gap: var(--space-3);
     flex-direction: column;
 
   }
@@ -76,17 +76,17 @@
     width: 2px;
     height: 100%;
     background-color: hsl(210, 0%, 50%);;
-    left: -16px;
+    left: calc(var(--space-1) * -0.5);
   }
 
   .section-links {
     display: flex;
-    gap: 16px;
+    gap: var(--space-3);
   }
 
   .section-links:not(.icons) {
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-5);
   }
 
   .link {
@@ -102,7 +102,21 @@
     width: 32px;
     height: 32px;
   }
-  .link > svg .svg-fill {
-    fill: hsl(210, 50%, 80%);
+
+  @media (max-width: 800px) {
+    .footer {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .links__container {
+      flex-direction: column;
+      width: 100%;
+    }
+    .section.section::before {
+      width: 100%;
+      height: 2px;
+      top: calc(var(--space-1) * -0.5);
+      left: initial;
+    }
   }
 </style>

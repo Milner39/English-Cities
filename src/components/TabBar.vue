@@ -8,13 +8,13 @@
     ]"
     >
       <div class="tab-title" @click="handleTab(index)">
-        <h4>{{ tab.title }}</h4>
+        <h6>{{ tab.title }}</h6>
       </div>
     </div>
   </div>
   <div class="tab__page">
     <div v-for="(tab, index) in tabs" :key="tab.title" :class="[{ active: selectedIndex === index }]">
-      <h1>{{ tab.header }}</h1>
+      <h3>{{ tab.header }}</h3>
       <p>
         {{ tab.text }}
       </p>
@@ -56,7 +56,7 @@
     width: 100%;
     background-color: hsl(210, 50%, 15%);
 
-    border-radius: 16px 16px 0 0;
+    border-radius: var(--space-3) var(--space-3) 0 0;
 
     display: flex;
     justify-content: flex-start;
@@ -64,19 +64,17 @@
   }
 
   .tab {
-    width: 10%;
-    min-width: 64px;
-    height: 32px;
+    margin-left: var(--space-3);
+    margin-top: var(--space-3);
 
-    margin-left: 16px;
-    margin-top: 16px;
-
-    border-radius: 16px 16px 0 0;
+    border-radius: var(--space-3) var(--space-3) 0 0;
 
     border-style: solid;
-    border-width: 2px 2px 0 2px;
+    border-width: var(--space-6) var(--space-6) 0 var(--space-6);
     border-color: hsl(210, 50%, 20%);
-    background-color: rgba(0, 0, 0, 0)
+    background-color: rgba(0, 0, 0, 0);
+
+    display : flex
   }
 
   .tab.active {
@@ -84,6 +82,8 @@
   }
 
   .tab-title {
+    margin: var(--space-4);
+    margin-bottom: var(--space-5);
     width: 100%;
     height: 100%;
     display: grid;
@@ -100,7 +100,7 @@
   .tab__page {
     width: 100%;
 
-    padding-top: 16px;
+    margin-top: var(--space-3);
   }
 
   .tab__page > * {
@@ -110,6 +110,10 @@
 
   .tab__page > *.active {
     display: block;
+  }
+
+  .tab__page > * > *:not(:first-child) {
+    padding-top: var(--space-4);
   }
   
 </style>

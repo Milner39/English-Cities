@@ -15,8 +15,8 @@
   .nav-link {
     height: 100%;
     aspect-ratio: 2/1;
-    border-radius: 1000px;
-    margin: 4px;
+    border-radius: var(--space-3);
+    margin: var(--space-5);
 
     background-color: hsl(210, 50%, 20%);
     

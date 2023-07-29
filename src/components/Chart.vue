@@ -113,10 +113,10 @@
   .chart__container {
     aspect-ratio: 2/1;
     background-color: hsl(210, 50%, 20%);
-    border-radius: 16px;
+    border-radius: var(--space-3);
     overflow: hidden;
   }
   .chart__container > canvas {
-    padding: 16px;
+    padding: var(--space-3);
   }
 </style>
