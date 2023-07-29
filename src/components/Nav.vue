@@ -22,7 +22,9 @@
 
   const search = () => {
     const city = document.getElementById("search").value
-    router.push("city/" + city)
+    //router.push("city/" + city)
+    const url = window.location.origin + "/city/" + city
+    window.open(url)
   }
   
 </script>
