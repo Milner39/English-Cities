@@ -10,7 +10,7 @@
         ]"
           @click="handleAccordion(index)"
       >
-        <h6>{{ accordion.title }}</h6>
+        <h5>{{ accordion.title }}</h5>
       </button>
         <Collapse as="section" :when="accordion.isExpanded" class="accordion-expanded">
           <p class="accordion-text">

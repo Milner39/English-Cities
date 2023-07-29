@@ -47,8 +47,8 @@
     padding: var(--space-3);
   }
 
-  .side > *:not(:last-child) {
-    margin-bottom: var(--space-3);
+  .side > *:not(:first-child) {
+    margin-top: var(--space-3);
   }
 
   .side > .title {
