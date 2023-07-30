@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion-group">
+  <div class="accordion-group" v-if="accordions.length != 0">
     <div v-for="(accordion, index) in accordions" :key="accordion.imageTitle" class="accordion">
       <button
         :class="[

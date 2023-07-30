@@ -2,13 +2,13 @@
   <div class="nav">
     <div class="nav-link__container">
       <slot name="nav-links"/>
-      <div class="search-bar">
+    </div>
+    <div class="search-bar">
         <form class="search-form">
           <input type="text" id="search" placeholder="Search for city..." class="search">
           <input type="submit" style="display: none;" @click="search()">
         </form>
       </div>
-    </div>
     <div class="call-to-action__container">
       <slot name="call-to-action"/>
     </div>
@@ -17,14 +17,12 @@
   
 <script setup>
 
- import { useRouter } from 'vue-router'
- const router = useRouter()
+  import { useRouter } from 'vue-router'
+  const router = useRouter()
 
   const search = () => {
     const city = document.getElementById("search").value
-    //router.push("city/" + city)
-    const url = window.location.origin + "/city/" + city
-    window.open(url)
+    router.push({path: "/city/" + city})
   }
   
 </script>
@@ -39,7 +37,8 @@
     top: 0px;
 
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-3);
 
     padding: var(--space-3) 0;
   }
@@ -62,25 +61,20 @@
   }
 
   @media (max-width: 800px) {
-    .nav {
-      grid-template-columns: 1fr 1fr;
-    }
-    
     .nav-link:not(.mobile) {
       display: none;
     }
   }
 
   .search-bar {
-    height: 100%;
-    width: 100%;
     background-color: hsl(210, 50%, 20%);
-    padding: var(--space-5);
     border-radius: var(--space-3);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.1)
   }
 
   .search-form {
@@ -88,7 +82,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--space-3);
+    margin: var(--space-3);
   }
 
   .search {

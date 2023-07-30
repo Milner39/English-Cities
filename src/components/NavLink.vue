@@ -14,21 +14,22 @@
 <style>
   .nav-link {
     height: 100%;
-    aspect-ratio: 2/1;
     border-radius: var(--space-3);
-    padding: var(--space-5);
 
     background-color: hsl(210, 50%, 20%);
     
     transition: transform 50ms ease-in-out;
 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-link > * {
+    margin: var(--space-3);
     text-decoration: none;
-    width: 100%;
-    height: 100%;
 
     display: flex;
     justify-content: center;

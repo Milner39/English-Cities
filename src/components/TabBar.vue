@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar">
+  <div class="tab-bar" v-if="tabs.length != 0">
     <div v-for="(tab, index) in tabs" :key="tab.tabTitle" :class="[
       'tab',
       {
@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="tab__page">
+  <div class="tab__page" v-if="tabs.length != 0">
     <div v-for="(tab, index) in tabs" :key="tab.tabTitle" :class="[{ active: selectedIndex === index }]">
       <h3>{{ tab.tabHeader }}</h3>
       <p>

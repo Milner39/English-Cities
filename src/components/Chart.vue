@@ -101,7 +101,7 @@
         options: {
           scales: {
             y: {
-              max: 500
+              suggestedMax: 250
             }
           },
           devicePixelRatio: 1.5,
