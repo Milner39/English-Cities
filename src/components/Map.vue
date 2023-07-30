@@ -9,15 +9,17 @@
   import leaflet from "leaflet"
   
   const props = defineProps(["cityName"])
+
+  const apiKey = "+Tg5CAeiWOIuy3D9NtnUAw==TH4GlzkxP5N3ceHj"
+  const request = {
+    method: "GET",
+    headers: { "X-Api-Key": apiKey },
+    "Content-Type": "application/javascript"
+  }
     
   let myMap
   onMounted(async() => {
 
-    const apiKey = "+Tg5CAeiWOIuy3D9NtnUAw==TH4GlzkxP5N3ceHj"
-    const request = {
-      method: "GET",
-      headers: { "X-Api-Key": apiKey },
-    }
     const cityName = props.cityName;
     const response = await fetch("https://api.api-ninjas.com/v1/geocoding?city=" + cityName + '&country="England"', request)
     const data =  await response.json()

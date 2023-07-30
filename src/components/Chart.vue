@@ -15,6 +15,7 @@
     method: "GET",
     headers: { 
       "X-Api-Key": apiKey,
+      "Content-Type": "application/javascript"
     },
   }
 
