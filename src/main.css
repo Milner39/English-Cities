@@ -45,11 +45,6 @@ p {
   font-size: 12px;
 }
 
-svg .svg-fill {
-  fill: hsl(210, 50%, 80%);
-}
-
-
 .button {
   width: 100%;
   padding: var(--space-3) 0;
@@ -76,7 +71,7 @@ svg .svg-fill {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   * {
   --space-1: 32px;
   --space-2: 16px;

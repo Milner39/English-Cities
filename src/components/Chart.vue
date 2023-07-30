@@ -1,6 +1,6 @@
 <template>
   <div class="chart__container">
-    <canvas id="air-quality"></canvas>
+    <canvas :id="props.cavasId"></canvas>
   </div>
 </template>
     
@@ -8,37 +8,64 @@
   import { onMounted } from "vue"
   import Chart from "chart.js/auto"
 
-  const props = defineProps(["cityName"])
+  const props = defineProps(["cityName", "cavasId", "chartOptions",])
+
+  const apiKey = "+Tg5CAeiWOIuy3D9NtnUAw==TH4GlzkxP5N3ceHj"
+  const request = {
+    method: "GET",
+    headers: { 
+      "X-Api-Key": apiKey,
+    },
+  }
+
+  const formatText = (text) => {
+    return text.charAt(0).toUpperCase() + text.slice(1).replace(/_/g, " ")
+  }
 
   onMounted(async() => {
 
-    const apiKey = "+Tg5CAeiWOIuy3D9NtnUAw==TH4GlzkxP5N3ceHj"
-    const request = {
-      method: "GET",
-      headers: { "X-Api-Key": apiKey },
+    const cityName = props.cityName
+    const cavasId = props.cavasId
+    const chartOptions = props.chartOptions
+
+
+    const endPoints = {
+      weather: "https://api.api-ninjas.com/v1/weather?city=" + cityName,
+      airQuality: "https://api.api-ninjas.com/v1/airquality?city=" + cityName
     }
-    const cityName = props.cityName;
-    const response = await fetch("https://api.api-ninjas.com/v1/airquality?city=" + cityName, request)
-    const data =  await response.json()
+
+    const response = await fetch(endPoints[cavasId], request)
+    let data =  await response.json()
 
 
-    let airQuality = []
+    let dataArray = []
     let index = 0
-    for (let key in data) {
-      if (key == "overall_aqi") {
-        airQuality[index] = {
-          type: "Overall AQI",
-          aqi: data[key]
+    if (props.cavasId === "weather") {
+      const included = ["max_temp", "temp", "min_temp", "feels_like", "humidity", "wind_speed"]
+      for (let key in data) {
+        if (included.includes(key)) {
+          dataArray[included.indexOf(key)] = {
+            x: formatText(key),
+            y: data[key]
+          }
         }
-        break
       }
-      airQuality[index] = {
-        type: key,
-        aqi: data[key]["aqi"]
+    } else if (props.cavasId === "airQuality") {
+      for (let key in data) {
+        if (key === "overall_aqi") {
+            dataArray[index] = {
+            x: formatText(key),
+            y: data[key]
+          }
+        } else {
+          dataArray[index] = {
+            x: formatText(key),
+            y: data[key]["aqi"]
+          }
+        }
+        index++
       }
-      index++
     }
-  
 
     let width, height, gradient;
     function getGradient(ctx, chartArea, alpha) {
@@ -77,15 +104,15 @@
     
     Chart.defaults.color = "#fff";
     new Chart(
-      document.getElementById("air-quality"),
+      document.getElementById(props.cavasId),
       {
         type: "bar",
         data: {
-          labels: airQuality.map(row => row.type),
+          labels: dataArray.map(index => index.x),
           datasets: [
             {
-              label: "AQI",
-              data: airQuality.map(row => row.aqi),
+              label: chartOptions.label,
+              data: dataArray.map(index => index.y),
               backgroundColor: function(context) {
                 const chart = context.chart
                 const {ctx, chartArea} = chart
@@ -101,7 +128,7 @@
         options: {
           scales: {
             y: {
-              suggestedMax: 250
+              suggestedMax: chartOptions.suggestedMax
             }
           },
           devicePixelRatio: 1.5,

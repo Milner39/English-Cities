@@ -19,20 +19,18 @@
       headers: { "X-Api-Key": apiKey },
     }
     const cityName = props.cityName;
-    const response = await fetch("https://api.api-ninjas.com/v1/city?name=" + cityName, request)
+    const response = await fetch("https://api.api-ninjas.com/v1/geocoding?city=" + cityName + '&country="England"', request)
     const data =  await response.json()
     const coords = [data[0].latitude, data[0].longitude]
 
 
     myMap = leaflet.map("mapId").setView(coords, 13)
-    leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 
-      {
+    leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         minZoom: 5,
         maxZoom: 20,
         attribution: '© OpenStreetMap'
       }).addTo(myMap)
-    const circle = leaflet.circle(coords, 
-      {
+    const circle = leaflet.circle(coords, {
         color: "hsl(210, 50%, 30%)",
         fillColor: "hsl(210, 50%, 30%)",
         fillOpacity: "0.5",
@@ -50,7 +48,7 @@
 <style>
   .map__container {
     width: 100%;
-    height: 512px;
+    height: 100%;
 
     display: flex;
     justify-content: center;
@@ -68,6 +66,12 @@
 
   .leaflet-popup-content {
     color: black;
+  }
+
+  @media (max-width: 1024px) {
+    .map__container {
+      height: 50vh;
+    }
   }
 
 </style>

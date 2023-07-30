@@ -92,11 +92,21 @@
   .accordion-expanded {
     background-color: hsl(210, 50%, 20%);
 
+    display: flex;
+
+    /* optional */
+    flex-direction: column;
+
+    gap: var(--space-3);
+
     transition: height var(--vc-auto-duration) cubic-bezier(0.3, 0, 0.6, 1);
   }
 
   .accordion-expanded > * {
-    padding: 0 var(--space-3) var(--space-3) var(--space-3);
+    padding: 0 var(--space-3);
+  }
+  .accordion-expanded > *:last-child {
+    padding-bottom: var(--space-3);
   }
 
   .accordion-text {

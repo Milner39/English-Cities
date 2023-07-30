@@ -1,6 +1,6 @@
 <template>
 <svg width="100px" height="100px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>github</title>
+<title>Github</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" class="svg-fill">
             <g id="icons" transform="translate(56.000000, 160.000000)">

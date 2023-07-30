@@ -1,5 +1,6 @@
 <template>
-  <div class="tab-bar" v-if="tabs.length != 0">
+  <div class="tabs__container" v-if="tabs.length != 0">
+  <div class="tab-bar">
     <div v-for="(tab, index) in tabs" :key="tab.tabTitle" :class="[
       'tab',
       {
@@ -12,13 +13,14 @@
       </div>
     </div>
   </div>
-  <div class="tab__page" v-if="tabs.length != 0">
+  <div class="tab-pages">
     <div v-for="(tab, index) in tabs" :key="tab.tabTitle" :class="[{ active: selectedIndex === index }]">
-      <h3>{{ tab.tabHeader }}</h3>
+      <h4>{{ tab.tabHeader }}</h4>
       <p>
         {{ tab.tabText }}
       </p>
     </div>
+  </div>
   </div>
 </template>
    
@@ -58,6 +60,12 @@
 </script>
   
 <style>
+  .tabs__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
   .tab-bar {
     width: 100%;
     background-color: hsl(210, 50%, 15%);
@@ -103,23 +111,19 @@
     color: hsl(210, 50%, 80%);
   }
 
-  .tab__page {
+  .tab-pages {
     width: 100%;
-
-    margin-top: var(--space-3);
   }
 
-  .tab__page > * {
+  .tab-pages > * {
     display: none;
     width: 100%;
   }
 
-  .tab__page > *.active {
-    display: block;
-  }
-
-  .tab__page > * > *:not(:first-child) {
-    padding-top: var(--space-4);
+  .tab-pages > *.active {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
   }
   
 </style>

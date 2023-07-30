@@ -1,4 +1,5 @@
 <template>
+
   <div class="page-darken" @click="closeModal()"></div>
   <div class="modal">
     <div class="close__container">
@@ -8,52 +9,61 @@
       Form Not Valid, Try Again
     </h1>
   </div>
+
   <div class="contact-page">
     <div class="contact-form">
-      <h4 class="heading">Inputs marked with <span class="red">*</span> are required</h4>
+      <h3 class="heading">Inputs marked with <span class="red">*</span> are required</h3>
       <form class="form">
-        <label for="fname" class="input-title">First Name:</label>
-        <br>
-        <input type="text" id="fname" name="fname" class="input"
-          placeholder="First Name..."
-        >
-        <br><br>
-
-        <label for="lname" class="input-title">Last name:</label>
-        <br>
-        <input type="text" id="lname" name="lname" class="input"
-          placeholder="Last Name..."
-        >
-        <br><br>
-
-        <label for="email" class="input-title">Email:<span class="red">*</span></label>
-        <br>
-        <input type="email" id="email" name="email" class="input"
-          placeholder="example@email.com..."
-          >
-        <br><br>
-
-        <label for="message" class="input-title">Message:<span class="red">*</span></label>
-        <br>
-        <input type="text" id="message" name="message" class="input"
-          placeholder="Message..."
-          pattern=".{1,}"
-        >
+        <FormInput :input='{
+          id: "fName",
+          type: "text",
+          label: "First Name:",
+          placeholder: "First Name...",
+          pattern: null,
+          required: false
+        }'/>
+        <FormInput :input='{
+          id: "lName",
+          type: "text",
+          label: "Last Name:",
+          placeholder: "Last Name...",
+          pattern: null,
+          required: false
+        }'/>
+        <FormInput :input='{
+          id: "email",
+          type: "email",
+          label: "Email:",
+          placeholder: "Example.email@example.com...",
+          pattern: null,
+          required: true
+        }'/>
+        <FormInput :input='{
+          id: "message",
+          type: "text",
+          label: "Message:",
+          placeholder: "Message...",
+          pattern: null,
+          required: true
+        }'/>
       </form>
-      <button  class="button" @click="handleSubmit()"><h5>SUBMIT</h5></button>
+      <button  class="button" @click="handleSubmit()"><h6>SUBMIT</h6></button>
     </div>
+
     <div class="success-page">
       <h1>Form Submited, Thank You!</h1>
     </div>
+
   </div>
 </template>
   
 <script setup>
+  import FormInput from '../components/FormInput.vue';
   import close from '../../public/svgs/close.vue';
 
+  const requiredIndex = [2,3]
   const handleSubmit = () => {
     const inputs = document.getElementsByClassName("input")
-    const requiredIndex = [2,3]
     for (let index = 0; index < inputs.length; index++) {
       if (!inputs[index].checkValidity() || (inputs[index].value == "" && requiredIndex.includes(index))) {
 
@@ -86,7 +96,6 @@
   
 <style>
   .contact-page {
-    width: 100%;
     background-color: hsl(210, 50%, 20%);
 
     display: flex;
@@ -95,69 +104,28 @@
   }
 
   .contact-form {
-    display: grid;
-    place-content: center;
+    margin: var(--space-2);
+    padding: var(--space-2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-2);
 
     border-style: solid;
     border-radius: var(--space-3);
     border-width: var(--space-6);
     border-color: hsl(210, 0%, 50%);
-
-    margin: var(--space-2);
-    padding: var(--space-3);
   }
 
-  .contact-form > *:not(:first-child) {
-    margin-top: var(--space-3);
+  .heading {
+    text-align: center;
   }
 
   .form {
-    display: block;
-  }
-
-  .input-title {
-    margin-left: var(--space-3);
-  }
-  
-  .input {
-    --padding: var(--space-3);
-    --border-width: var(--space-6);
-    width: calc(100% - var(--padding) - (var(--border-width) * 2));
-    height: var(--space-2);
-
-    padding: 0;
-    margin: 0;
-    padding-left: var(--padding);
-    outline: none;
-
-    border-style: solid;
-    border-width: var(--border-width);
-    border-radius: var(--space-3);
-    border-color: hsl(210, 0%, 50%);
-    background-color: hsla(210, 50%, 20%, 20%);
-  }
-
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
-  input:-webkit-autofill:focus, 
-  input:-webkit-autofill:active{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #ffffff;
-  }
-
-  input:placeholder-shown {
-    border-color: hsl(210, 0%, 50%) !important;
-  }
-
-  input:invalid {
-    border-color: hsl(0, 69%, 50%);
-  }
-  input:valid {
-    border-color: hsl(120, 69%, 50%);
-  }
-
-  .red {
-    color: hsl(0, 69%, 50%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
   }
 
 
@@ -201,6 +169,11 @@
     align-items: center;
   }
 
+  .error-msg {
+    margin: var(--space-1);
+    text-align: center;
+  }
+
   .close-button {
     padding: 8px;
 
@@ -218,7 +191,11 @@
   .close-button > svg {
     width: var(--space-3);
     height: var(--space-3);
+
+    fill: white;
   }
+
+
 
   .page-darken {
     width: 100%;
@@ -233,15 +210,22 @@
     z-index: 10000;
   }
 
-  .error-msg {
-    margin: var(--space-1);
-    text-align: center;
-  }
+
 
   .success-page {
     display: none;
     place-content: center;
     padding: var(--space-1);
+    text-align: center;
+  }
+
+
+
+
+  @media (max-width: 1024px) {
+    .input {
+      --font-size: 16px
+    }
   }
 </style>
   

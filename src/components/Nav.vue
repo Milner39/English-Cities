@@ -4,7 +4,7 @@
       <slot name="nav-links"/>
     </div>
     <div class="search-bar">
-        <form class="search-form">
+        <form v-on:submit.prevent class="search-form">
           <input type="text" id="search" placeholder="Search for city..." class="search">
           <input type="submit" style="display: none;" @click="search()">
         </form>
@@ -34,7 +34,7 @@
 
     position: sticky;
     z-index: 1000;
-    top: 0px;
+    top: -1px;
 
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -60,7 +60,7 @@
     margin-right: var(--space-3);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 512px) {
     .nav-link:not(.mobile) {
       display: none;
     }
@@ -92,5 +92,11 @@
     outline: none;
     background-color: hsl(210, 50%, 20%);
     font-size: 16px;
+  }
+
+  @media (max-width: 1024px) {
+    .search {
+      font-size: 12px;
+    }
   }
 </style>

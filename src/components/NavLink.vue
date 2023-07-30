@@ -1,14 +1,13 @@
 <template>
-    <div class="nav-link">
+    <router-link :to="path" class="nav-link">
       <slot></slot>
-    </div>
+    </router-link>
 </template>
     
-<script>
-  
-  export default {
-    name: "NavLink"
-  }
+<script setup>
+  import { RouterLink } from 'vue-router';
+
+  const props = defineProps(["path"])
 </script>
     
 <style>

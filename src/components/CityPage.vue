@@ -22,24 +22,14 @@
     grid-template-columns: 40% 60%;
   }
 
-  .main {
-    background-color: hsl(210, 50%, 20%);
-    
-    padding: var(--space-3)
-  }
-
-  .main > *:not(.tab-bar):not(:last-child) {
-    margin-bottom: var(--space-3);
-  }
-
   .side {
+    padding: var(--space-3);
+
     background-color: hsl(210, 50%, 30%);
 
-    padding: var(--space-3);
-  }
-
-  .side > *:not(:first-child) {
-    margin-top: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
   }
 
   .side > .title {
@@ -70,13 +60,23 @@
     background-color: white;
   }
 
-  @media (max-width: 900px) {
+  .main {
+    padding: var(--space-3);
+
+    background-color: hsl(210, 50%, 20%);
+    
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .main > *:not(.tab-bar):not(:last-child) {
+    
+  }
+
+  @media (max-width: 1024px) {
     .city-page {
       grid-template-columns: none;
-    }
-
-    .map__container {
-      max-height: 50vh;
     }
   }
 </style>

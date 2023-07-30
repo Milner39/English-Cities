@@ -13,6 +13,7 @@
     background-color: hsl(210, 50%, 20%);
     display: grid;
     place-content: center;
+    text-align: center;
   }
 
   .error-message {

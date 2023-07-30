@@ -2,8 +2,20 @@
   <CityPage>
     <template #side>
       <h1 class="title">{{ city }}</h1>
-      <h4>Air Quality - Lower is better</h4>
-      <Chart :cityName="city"/>
+      <div>
+        <h4 class="subheading">Weather</h4>
+        <Chart :cityName="city" cavasId="weather" :chartOptions='{
+          label: "",
+          suggestedMax: 100,
+        }'/>
+      </div>
+      <div>
+        <h4 class="subheading">Air Quality - Lower is better</h4>
+        <Chart :cityName="city" cavasId="airQuality" :chartOptions='{
+          label: "AQI",
+          suggestedMax: 250,
+        }'/>
+      </div>
       <AccordionGroup :cityName="city"/>
     </template>
     <template #main>
@@ -30,5 +42,8 @@
 </script>
   
 <style>
-
+  .subheading {
+    padding-left: var(--space-3);
+    padding-bottom: var(--space-6);
+  }
 </style>

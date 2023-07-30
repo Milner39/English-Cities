@@ -1,12 +1,13 @@
 <template>
   <div class="footer">
-    <slot></slot>
-
+    <div v-if="props.sections.links" class="links__container">
+      <slot name="links"></slot>
+    </div>
   </div>
 </template>
   
 <script setup>
-
+  const props = defineProps(["sections"])
 </script>
   
 <style>
@@ -55,7 +56,7 @@
     gap: var(--space-5);
   }
 
-  .link {
+  .link * {
     color: hsl(210, 50%, 80%)
   }
 
@@ -69,7 +70,12 @@
     height: 32px;
   }
 
-  @media (max-width: 800px) {
+  .link > svg .svg-fill {
+    fill: hsl(210, 50%, 80%);
+  }
+
+
+  @media (max-width: 1024px) {
     .footer {
       display: flex;
       justify-content: flex-start;
