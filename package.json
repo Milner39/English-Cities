@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "serve -s dist"
   },
   "dependencies": {
     "chart.js": "^4.3.2",
     "leaflet": "^1.9.4",
+    "serve": "^14.2.0",
     "vue": "^3.3.4",
     "vue-collapsed": "^1.1.3",
     "vue-router": "^4.2.2"
